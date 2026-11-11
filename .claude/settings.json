@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR/recetario\" && npx tsc --noEmit 1>&2 && npx vitest run 1>&2 || exit 2"
+          }
+        ]
+      }
+    ]
+  }
+}

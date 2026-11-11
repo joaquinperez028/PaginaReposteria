@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Identidad visual (DECISIONES.md, P22): repostería — frutilla, dulce de leche, pistacho, cacao. */
+@theme {
+  --color-fondo: #F6EEE3;
+  --color-tarjeta: #FFFBF5;
+  --color-cacao: #2B1712;
+  --color-tinta-media: #5A4E44;
+  --color-tinta-suave: #6B5F55;
+  --color-borde: #E8DECD;
+  --color-borde-fuerte: #D2C3A9;
+  --color-linea: #EFE6D7;
+  --color-frutilla: #9B2342;
+  --color-frutilla-osc: #6E1830;
+  --color-dulce: #D9902F;
+  --color-dulce-claro: #E8B36A;
+  --color-crema-tostada: #E9CFA0;
+  --color-manteca: #F6C25B;
+  --color-pistacho: #3B5A1C;
+  --color-pistacho-osc: #284114;
+  --color-pistacho-claro: #E1EBD0;
+  --color-aviso: #6E4700;
+  --color-aviso-fondo: #F3E3BF;
+  --color-aviso-suave: #FBF3E3;
+  --color-noche: #1B1714;
+
+  --font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Figtree", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-mano: "Caveat", cursive;
+}
+
+/* Modo oscuro automático según el teléfono (P19). Los utilitarios leen estas variables. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: #1D1512;
+    --color-tarjeta: #2A201C;
+    --color-cacao: #F3E9DD;
+    --color-tinta-media: #D2C4B5;
+    --color-tinta-suave: #BFAF9F;
+    --color-borde: #3E322C;
+    --color-borde-fuerte: #5A4A40;
+    --color-linea: #352A25;
+    --color-frutilla: #E5728C;
+    --color-frutilla-osc: #F29AAE;
+    --color-pistacho: #B5D08C;
+    --color-pistacho-osc: #CBE2A6;
+    --color-pistacho-claro: #2C3A20;
+    --color-aviso: #F0C46A;
+    --color-aviso-fondo: #43330F;
+    --color-aviso-suave: #2F2513;
+    --color-crema-tostada: #6E5636;
+  }
+}
+
+html {
+  background: var(--color-fondo);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-cacao);
+  background: var(--color-fondo);
+}
+
+.numeros {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@keyframes linea-escaneo {
+  0%, 100% { transform: translateY(-46px); }
+  50% { transform: translateY(46px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animar-escaneo { animation: linea-escaneo 2.2s ease-in-out infinite; }
+}
